@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">  
+</head>
+<body class="indigo">
+    
+    <header class="indigo darken-1 section">
+        <h2 class="center white-text">Budget Calculator</h2>
+    </header>
+
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form class="card z-depth-0">
+                    <div class="card-content">
+                        <span class="card-title indigo-text">Add Item:</span>
+                        <div class="input-field">
+                            <input type="text" id="name">
+                            <label for="name">item Name</label>
+                        </div>
+                        <div class="input-field center">
+                            <input type="text" id="cost">
+                            <label for="name">item Cost (£)</label>                    
+                        </div>
+                        <div class="input-field center">
+                            <button class="btn-large pink white-text">Add Item</button>
+                        </div>
+                        <div class="input-field center">
+                            <p class="red-text" id="error"></p>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col s12 m5 push-m1">
+                <div class="canvas"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDEqk6ZtSlKd0VRhvz7fLAYOu3IzbNoJe8",
+        authDomain: "udemy-d3-firebase-df58b.firebaseapp.com",
+        databaseURL: "https://udemy-d3-firebase-df58b.firebaseio.com",
+        projectId: "udemy-d3-firebase-df58b",
+        storageBucket: "udemy-d3-firebase-df58b.appspot.com",
+        messagingSenderId: "207991049927",
+        appId: "1:207991049927:web:17c85c2c3e27feb69338e2",
+        measurementId: "G-L1BC7LPB03"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+    </script>
+
+
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+      <script src="./index.js"></script>
+      <script src="./graph.js"></script>
+
+</body>
+</html>
